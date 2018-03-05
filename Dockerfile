@@ -19,7 +19,7 @@ RUN apt-get install -y wget
 RUN wget --no-verbose -O /tmp/apache-maven-3.5.2.tar.gz http://archive.apache.org/dist/maven/maven-3/3.5.2/binaries/apache-maven-3.5.2-bin.tar.gz
 
 # verify checksum
-RUN echo "08c769d4348a88bf9f224d84fa9d2b2b /tmp/apache-maven-3.5.2.tar.gz" | md5sum -c
+RUN echo "948110de4aab290033c23bf4894f7d9a /tmp/apache-maven-3.5.2.tar.gz" | md5sum -c
 
 # install maven
 RUN tar xzf /tmp/apache-maven-3.5.2.tar.gz -C /opt/
