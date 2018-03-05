@@ -36,7 +36,9 @@ ENV java_version 9.0.4
 ENV filename jdk-9.0.4_linux-x64_bin.tar.gz
 
 # download java, accepting the license agreement
-RUN wget wget -c --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" "http://download.oracle.com/otn-pub/java/jdk/9.0.4+11/c2514751926b4512b076cc82f959763f/jdk-9.0.4_linux-x64_bin.tar.gz"
+RUN apt-get install -y curl
+#RUN wget wget -c --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" "http://download.oracle.com/otn-pub/java/jdk/9.0.4+11/c2514751926b4512b076cc82f959763f/jdk-9.0.4_linux-x64_bin.tar.gz"
+RUN curl -C - -LR#OH "Cookie: oraclelicense=accept-securebackup-cookie" -k "http://download.oracle.com/otn-pub/java/jdk/9.0.4+11/c2514751926b4512b076cc82f959763f/jdk-9.0.4_linux-x64_bin.tar.gz"
 
 # unpack java
 RUN mkdir /opt/java-oracle && tar -zxf $filename -C /opt/java-oracle/
