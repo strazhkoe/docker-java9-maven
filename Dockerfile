@@ -1,5 +1,5 @@
 # Ubuntu 16.04
-# Oracle Java 9.0.1 64 bit
+# Oracle Java 9.0.4 64 bit
 # Maven 3.5.2
 
 FROM ubuntu:16.04
@@ -15,7 +15,7 @@ RUN apt-get update
 # install wget
 RUN apt-get install -y wget
 
-# get maven 3.3.9
+# get maven 3.5.2
 RUN wget --no-verbose -O /tmp/apache-maven-3.5.2.tar.gz http://archive.apache.org/dist/maven/maven-3/3.5.2/binaries/apache-maven-3.5.2-bin.tar.gz
 
 # verify checksum
@@ -32,11 +32,11 @@ ENV MAVEN_HOME /opt/maven
 RUN apt-get clean
 
 # set shell variables for java installation
-ENV java_version 9.0.1
-ENV filename jdk-9+181_linux-x64_bin.tar.gz
+ENV java_version 9.0.4
+ENV filename jdk-9.0.4_linux-x64_bin.tar.gz
 
 # download java, accepting the license agreement
-RUN wget http://download.java.net/java/GA/jdk9/9/binaries/jdk-9+181_linux-x64_bin.tar.gz
+RUN wget wget -c --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" "http://download.oracle.com/otn-pub/java/jdk/9.0.4+11/c2514751926b4512b076cc82f959763f/jdk-9.0.4_linux-x64_bin.tar.gz"
 
 # unpack java
 RUN mkdir /opt/java-oracle && tar -zxf $filename -C /opt/java-oracle/
