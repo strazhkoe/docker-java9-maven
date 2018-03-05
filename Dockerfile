@@ -1,6 +1,6 @@
 # Ubuntu 16.04
 # Oracle Java 9.0.1 64 bit
-# Maven 3.3.9
+# Maven 3.5.2
 
 FROM ubuntu:16.04
 
